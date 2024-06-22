@@ -1,1 +1,0 @@
-# intuitive-understanding-of-linear-algebra
