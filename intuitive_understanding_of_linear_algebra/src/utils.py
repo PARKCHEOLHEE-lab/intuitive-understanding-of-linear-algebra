@@ -3,7 +3,13 @@ from matplotlib.axes import Axes
 
 
 def plot_full_custom_2d_grid(
-    ax: Axes, basis: np.array, xlim: tuple, ylim: tuple, grid_step: float=1.0, linewidth: float=0.5, color: str = "gray"
+    ax: Axes, 
+    basis: np.array, 
+    xlim: tuple, 
+    ylim: tuple, 
+    grid_step: float=1.0, 
+    linewidth: float=0.5, 
+    color: str = "gray",
 ):
     grid_lines = []
     
