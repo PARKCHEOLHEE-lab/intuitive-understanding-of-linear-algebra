@@ -74,7 +74,21 @@ def plot_full_custom_3d_grid(
     return grid_lines
 
 
-def cube():
+def cube(return_vertices: bool = False):
+    if return_vertices:
+        return np.array(
+            [
+                [0, 0, 0],
+                [1, 0, 0],
+                [1, 1, 0],
+                [0, 1, 0],
+                [0, 0, 1],
+                [1, 0, 1],
+                [1, 1, 1],
+                [0, 1, 1],
+            ]
+        )
+
     return np.array(
         [
             [0, 0, 0],
