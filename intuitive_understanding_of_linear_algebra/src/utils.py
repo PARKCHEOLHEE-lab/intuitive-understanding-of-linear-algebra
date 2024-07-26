@@ -39,7 +39,8 @@ def plot_full_custom_3d_grid(
     zlim: tuple, 
     grid_step: float=1.0, 
     linewidth: float=0.5, 
-    color: str = "gray"
+    color: str = "gray",
+    alpha: float = 1.0,
 ):
     grid_lines = []
     
@@ -52,7 +53,7 @@ def plot_full_custom_3d_grid(
         for zi in z:
             points = np.array([[xlim[0], yi, zi], [xlim[1], yi, zi]])
             transformed_points = points @ basis
-            line, = ax.plot(transformed_points[:, 0], transformed_points[:, 1], transformed_points[:, 2], color=color, linestyle='--', linewidth=linewidth)
+            line, = ax.plot(transformed_points[:, 0], transformed_points[:, 1], transformed_points[:, 2], color=color, linestyle='--', linewidth=linewidth, alpha=alpha)
             grid_lines.append(line)
     
     # Plot lines parallel to y-axis
@@ -60,7 +61,7 @@ def plot_full_custom_3d_grid(
         for zi in z:
             points = np.array([[xi, ylim[0], zi], [xi, ylim[1], zi]])
             transformed_points = points @ basis
-            line, = ax.plot(transformed_points[:, 0], transformed_points[:, 1], transformed_points[:, 2], color=color, linestyle='--', linewidth=linewidth)
+            line, = ax.plot(transformed_points[:, 0], transformed_points[:, 1], transformed_points[:, 2], color=color, linestyle='--', linewidth=linewidth, alpha=alpha)
             grid_lines.append(line)
     
     # Plot lines parallel to z-axis
@@ -68,7 +69,7 @@ def plot_full_custom_3d_grid(
         for yi in y:
             points = np.array([[xi, yi, zlim[0]], [xi, yi, zlim[1]]])
             transformed_points = points @ basis
-            line, = ax.plot(transformed_points[:, 0], transformed_points[:, 1], transformed_points[:, 2], color=color, linestyle='--', linewidth=linewidth)
+            line, = ax.plot(transformed_points[:, 0], transformed_points[:, 1], transformed_points[:, 2], color=color, linestyle='--', linewidth=linewidth, alpha=alpha)
             grid_lines.append(line)
     
     return grid_lines
